@@ -1,0 +1,18 @@
+{
+  "network": "arc_testnet",
+  "chainId": "5042002",
+  "deployer": "0x94e0dc7AD29b94EC9819f6cEC3364DD34f41b3c6",
+  "contracts": {
+    "XyloBondReputation": "0x9a17E61Fe9343E16948759580c287770C38C1ef4",
+    "XyloBondRegistry": "0x70E0e650F67F44509ba9020D06fa04e2a103907c",
+    "XyloBondClaims": "0x7B797ed5Ee7D64e8166c31A43bFb889da661A511"
+  },
+  "usdc": "0x3600000000000000000000000000000000000000",
+  "deployedAt": "2026-02-07T20:13:02.554Z",
+  "explorer": "https://testnet.arcscan.app",
+  "explorerLinks": {
+    "XyloBondReputation": "https://testnet.arcscan.app/address/0x9a17E61Fe9343E16948759580c287770C38C1ef4",
+    "XyloBondRegistry": "https://testnet.arcscan.app/address/0x70E0e650F67F44509ba9020D06fa04e2a103907c",
+    "XyloBondClaims": "https://testnet.arcscan.app/address/0x7B797ed5Ee7D64e8166c31A43bFb889da661A511"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "xylobond",
+  "version": "1.0.0",
+  "description": "XyloBond - The First AI Agent Insurance & Liability Protocol",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat",
+    "deploy:arc": "hardhat run scripts/deploy.js --network arc_testnet",
+    "verify": "hardhat verify --network arc_testnet",
+    "clean": "hardhat clean",
+    "node": "hardhat node"
+  },
+  "keywords": [
+    "ai-agents",
+    "insurance",
+    "liability",
+    "usdc",
+    "arc",
+    "circle",
+    "defi",
+    "bonding",
+    "reputation",
+    "openclaw",
+    "moltbook",
+    "hackathon"
+  ],
+  "author": "XyloBond Protocol",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^16.6.1",
+    "hardhat": "^2.28.4"
+  }
+}

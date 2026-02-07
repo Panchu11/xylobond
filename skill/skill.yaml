@@ -1,0 +1,143 @@
+name: xylobond
+version: 1.0.0
+description: |
+  XyloBond - AI Agent Insurance & Liability Protocol
+  
+  The first decentralized insurance protocol for AI agents.
+  Post bonds, file claims, build reputation - all settled in USDC.
+  
+  Solve the $9 billion liability gap in the agent economy.
+
+author: XyloBond Protocol
+homepage: https://github.com/Panchu11/xylobond
+license: MIT
+
+# Required permissions
+permissions:
+  - wallet:read      # Read wallet balance and address
+  - wallet:write     # Sign and send transactions
+  - network:access   # Access blockchain networks
+
+# Network configuration
+networks:
+  arc_testnet:
+    chainId: 5042002
+    rpc: https://rpc.testnet.arc.network
+    explorer: https://testnet.arcscan.app
+
+# Contract addresses (DEPLOYED)
+contracts:
+  arc_testnet:
+    usdc: "0x3600000000000000000000000000000000000000"
+    reputation: "0x9a17E61Fe9343E16948759580c287770C38C1ef4"
+    registry: "0x70E0e650F67F44509ba9020D06fa04e2a103907c"
+    claims: "0x7B797ed5Ee7D64e8166c31A43bFb889da661A511"
+
+# Available commands
+commands:
+  bond:
+    description: Post a USDC bond to become insured
+    usage: xylobond bond <amount>
+    args:
+      - name: amount
+        type: number
+        required: true
+        description: Amount of USDC to bond (minimum 10 USDC)
+    examples:
+      - command: xylobond bond 100
+        description: Post a 100 USDC bond
+      - command: xylobond bond 500
+        description: Post a 500 USDC bond for higher coverage
+    handler: handlers/bond.js
+    
+  withdraw:
+    description: Withdraw your available (unlocked) bond
+    usage: xylobond withdraw <amount>
+    args:
+      - name: amount
+        type: number
+        required: true
+        description: Amount of USDC to withdraw
+    examples:
+      - command: xylobond withdraw 50
+        description: Withdraw 50 USDC from your bond
+    handler: handlers/withdraw.js
+    
+  check:
+    description: Check if an agent is bonded and their status
+    usage: xylobond check <agent_address>
+    args:
+      - name: agent
+        type: address
+        required: true
+        description: Agent address to check
+    examples:
+      - command: xylobond check 0x1234567890abcdef1234567890abcdef12345678
+        description: Check the bond status of an agent
+    handler: handlers/check.js
+    
+  claim:
+    description: File a claim against a bonded agent who harmed you
+    usage: xylobond claim <agent_address> <amount> <evidence>
+    args:
+      - name: agent
+        type: address
+        required: true
+        description: Agent address to claim against
+      - name: amount
+        type: number
+        required: true
+        description: Amount of USDC to claim
+      - name: evidence
+        type: string
+        required: true
+        description: Evidence supporting your claim (tx hash, IPFS link, etc.)
+    examples:
+      - command: xylobond claim 0x1234... 50 tx:0xabcdef123456
+        description: File a 50 USDC claim with transaction evidence
+    handler: handlers/claim.js
+    
+  reputation:
+    description: Check an agent's reputation score and tier
+    usage: xylobond reputation <agent_address>
+    args:
+      - name: agent
+        type: address
+        required: true
+        description: Agent address to check
+    examples:
+      - command: xylobond reputation 0x1234567890abcdef1234567890abcdef12345678
+        description: Check reputation score and tier
+    handler: handlers/reputation.js
+    
+  status:
+    description: Check your own bond status and reputation
+    usage: xylobond status
+    examples:
+      - command: xylobond status
+        description: View your complete XyloBond status
+    handler: handlers/status.js
+    
+  stats:
+    description: View XyloBond protocol statistics
+    usage: xylobond stats
+    examples:
+      - command: xylobond stats
+        description: View total bonds, claims, and payouts
+    handler: handlers/stats.js
+
+# Skill metadata for discovery
+tags:
+  - insurance
+  - liability
+  - bonding
+  - reputation
+  - claims
+  - usdc
+  - arc
+  - circle
+  - defi
+  - trust
+
+# Category for ClawHub
+category: finance

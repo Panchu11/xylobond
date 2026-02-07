@@ -1,0 +1,27 @@
+{
+  "name": "xylobond-skill",
+  "version": "1.0.0",
+  "description": "XyloBond - AI Agent Insurance & Liability Protocol Skill",
+  "main": "lib/contracts.js",
+  "author": "XyloBond Protocol",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Panchu11/xylobond"
+  },
+  "dependencies": {
+    "ethers": "^6.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "xylobond",
+    "ai-agent",
+    "insurance",
+    "openclaw",
+    "skill",
+    "usdc",
+    "arc"
+  ]
+}
